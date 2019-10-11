@@ -3,12 +3,12 @@ const Apify = require('apify');
 const loggedCheck = async (page) => {
 
     try {
-        await page.waitForSelector('.icon-search', {timeout: 50000});
+        await page.waitForSelector('.icon-search', {timeout: 100000});
         return true;
     } catch (e) {
         try {
             //prfofile page
-            await page.waitForSelector('.profile-gate-label', {timeout: 50000});
+            await page.waitForSelector('.profile-gate-label', {timeout: 100000});
             return true
         } catch (e) {
             return false
@@ -19,7 +19,7 @@ const loggedCheck = async (page) => {
 const profileCheck = async (page) => {
 
     try {
-        await page.waitForSelector('.profile-link', {timeout: 50000});
+        await page.waitForSelector('.profile-link', {timeout: 100000});
         return true;
     } catch (e) {
         return false
